@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
+use Carbon\Carbon;
+
 class TypesSeeder extends Seeder
 {
     /**
@@ -16,7 +18,9 @@ class TypesSeeder extends Seeder
         for ($i = 0; $i < 12; $i++){
 
             \DB::table('types')->insert(array(
-                'type' => $typesArray[$i]
+                'type' => $typesArray[$i],
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
             ));
 
         }

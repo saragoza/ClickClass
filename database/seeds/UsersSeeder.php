@@ -4,6 +4,8 @@ use Illuminate\Database\Seeder;
 
 use Faker\Factory as Faker;
 
+use Carbon\Carbon;
+
 class UsersSeeder extends Seeder
 {
     /**
@@ -19,8 +21,10 @@ class UsersSeeder extends Seeder
 
             \DB::table('users')->insert(array(
                 'name' => $faker->userName(50),
-                'email' => $faker->unique()->email,
-                'password' => \Hash::make('secret')
+                'email' => $faker->unique()->email(50),
+                'password' => \Hash::make('secret'),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
             ));
 
         }
