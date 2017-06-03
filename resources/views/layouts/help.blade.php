@@ -14,8 +14,8 @@
         <style>
             html, body {
                 background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
+                color: #000;
+                font-family: "Comic Sans MS", cursive, sans-serif;
                 font-weight: 100;
                 height: 100vh;
                 margin: 0;
@@ -53,7 +53,10 @@
         </style>
     </head>
     <body>
-        <div style="padding:60px">
+        <div style="padding:0px 60px">
+           <div class="page-header">
+             <p style="font-size:3.5em"><strong>Manual para usuarios de ClickClass</strong><p>
+           </div>
            <h1>1  ¿Qué tengo que hacer para formar parte de la comunidad ClickClass?</h1>
            <p>Formar parte de la red de usuarios de ClickClass es muy sencillo, simplemente tienes que acceder al formulario de registro haciendo click en el link Registrarse de la welcome page.</p>
            <p>Simplemente introduce tu nombre de usuario, email y password y con un click serás un miembro más de la comunidad.</p>
