@@ -1,2 +1,1 @@
-$(document).ready(function(){function showImages(){$("#marco-inicio-1").fadeTo(1500,1,function(){})}
-showImages();$("#submitShareForm").on("click",function(){$("#shareForm").submit()});$("textarea").on("click",function(){$("textarea").caretToStart()})})
+$(document).ready(function(){!function(){$("#p-inicio-1").fadeTo(700,1,function(){$("#p-inicio-2").fadeTo(700,1,function(){$("#p-inicio-3").fadeTo(1e3,1),$("#marco-inicio-1").fadeTo(1e3,1)})})}(),$("#submitShareForm").on("click",function(){$("#shareForm").submit()}),$("textarea").on("click",function(){$("textarea").caretToStart()})});
