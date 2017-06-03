@@ -92,3 +92,7 @@ Route::post('/perms/filename', 'Perms@getFilename');
 //Idioma Datatables
 
 Route::get('/datatablesEs', 'DTable@datatablesEs');
+
+//Help
+
+Route::get('/help', 'DTable@showHelp');

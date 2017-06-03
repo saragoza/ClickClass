@@ -55,7 +55,7 @@
                             <li class="text-center">
                                 <a id="foro" href="http://clickclass.foroactivo.com/" target="blank"><small>Foro</small></a>
                             </li>
-                            <li class="text-center"><a id="ayuda" href="#" target="blank"><small>Ayuda</small></a></li>
+                            <li class="text-center"><a id="ayuda" href="{{ url('/help') }}" target="blank"><small>Ayuda</small></a></li>
                         </ul>
                         <ul id="usuario" class="nav navbar-nav col-sm-2">
                             <li class="dropdown text-center">

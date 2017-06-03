@@ -33,4 +33,8 @@ class DTable extends Controller
         }';
         return $jsonDatatable;
     }
+
+    public function showHelp() {
+        return view('layouts.help');
+    }
 }
