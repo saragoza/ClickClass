@@ -162,11 +162,11 @@ class Docs extends Controller
 
         if ($doc->save()){
             $request->session()->flash('message.level', 'ok');
-            $request->session()->flash('message.content', 'Archivo compartido con éxito');
+            $request->session()->flash('message.content', 'Archivo editado con éxito');
         }
         else {
             $request->session()->flash('message.level', 'error');
-            $request->session()->flash('message.content', 'Error al compartir el archivo');
+            $request->session()->flash('message.content', 'Error al editar el archivo');
         }
         return redirect('/docs/edit/'.$id);
     }
