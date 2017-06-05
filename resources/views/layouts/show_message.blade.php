@@ -1,13 +1,15 @@
-@if (isset($ok))
-<div class="row">
-    <div class="alert alert-success alert-dismissable col-sm-10 col-sm-offset-1" role="alert">
-        <strong>{{ $ok }}</strong>
+@if(session()->has('message.level'))
+    @if (session('message.level') == 'ok')
+    <div class="row">
+        <div class="alert alert-success alert-dismissable col-sm-10 col-sm-offset-1" role="alert">
+            <strong>{{ session('message.content') }}</strong>
+        </div>
     </div>
-</div>
-@elseif (isset($error))
-<div class="row">
-    <div class="alert alert-danger alert-dismissable col-sm-10 col-sm-offset-1" role="alert">
-        <strong>{{ $error }}</strong>
+    @elseif (session('message.level') == 'error')
+    <div class="row">
+        <div class="alert alert-danger alert-dismissable col-sm-10 col-sm-offset-1" role="alert">
+            <strong>{{ session('message.content') }}</strong>
+        </div>
     </div>
-</div>
+    @endif
 @endif

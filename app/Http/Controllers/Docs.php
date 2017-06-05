@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Support\Facades\DB;
 
+use Illuminate\Routing\Redirector;
+
 use App\Doc;
 
 use App\User;
@@ -91,11 +93,16 @@ class Docs extends Controller
 
         $types = Type::all();
         if ($doc->save()){
-            return view('layouts.sharefile_form')->with(['ok' => $ok, 'types' => $types]);
+            $request->session()->flash('message.level', 'ok');
+            $request->session()->flash('message.content', 'Archivo compartido con éxito');
+            //return view('layouts.sharefile_form')->with(['ok' => $ok, 'types' => $types]);
         }
         else {
-            return view('layouts.sharefile_form')->with(['error' => $error, 'types' => $types]);
+            $request->session()->flash('message.level', 'error');
+            $request->session()->flash('message.content', 'Error al compartir el archivo');
+            //return view('layouts.sharefile_form')->with(['error' => $error, 'types' => $types]);
         }
+        return redirect('/docs/create');
     }
 
     /**
