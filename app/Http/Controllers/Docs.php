@@ -88,19 +88,13 @@ class Docs extends Controller
         $file = $request->file('sharedfile');
         Storage::disk('sharedFiles')->put($doc->filename, file_get_contents($file->getRealPath()));
 
-        $ok = 'Archivo compartido con éxito';
-        $error = 'Error al compartir el archivo';
-
-        $types = Type::all();
         if ($doc->save()){
             $request->session()->flash('message.level', 'ok');
             $request->session()->flash('message.content', 'Archivo compartido con éxito');
-            //return view('layouts.sharefile_form')->with(['ok' => $ok, 'types' => $types]);
         }
         else {
             $request->session()->flash('message.level', 'error');
             $request->session()->flash('message.content', 'Error al compartir el archivo');
-            //return view('layouts.sharefile_form')->with(['error' => $error, 'types' => $types]);
         }
         return redirect('/docs/create');
     }
@@ -166,16 +160,15 @@ class Docs extends Controller
             Storage::disk('sharedFiles')->put($doc->filename, file_get_contents($file->getRealPath()));
         }
 
-        $ok = 'Archivo editado con éxito';
-        $error = 'Error al editar el archivo';
-
-        $types = Type::all();
         if ($doc->save()){
-            return view('layouts.sharefile_form')->with(['ok'=> $ok, 'doc' => $doc, 'types' => $types]);
+            $request->session()->flash('message.level', 'ok');
+            $request->session()->flash('message.content', 'Archivo compartido con éxito');
         }
         else {
-            return view('layouts.sharefile_form')->with(['error'=> $error, 'doc' => $doc, 'types' => $types]);
+            $request->session()->flash('message.level', 'error');
+            $request->session()->flash('message.content', 'Error al compartir el archivo');
         }
+        return redirect('/docs/edit/'.$id);
     }
 
     /**
